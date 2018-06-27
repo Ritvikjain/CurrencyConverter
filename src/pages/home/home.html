@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar class="bg-dark">
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,42 +7,42 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
+<ion-content class="bg mt-5" padding>
+  <ion-card class="card-bg">
     <ion-card-header>
-      Base:
+      <strong>Base :</strong>
     </ion-card-header>
     <ion-card-content class="d-flex flex-column justify-content-center">
       <div class="d-flex flex-row justify-content-around">
-        <ion-label>Currency</ion-label>
+        <ion-label>Currency :</ion-label>
         <ion-select [(ngModel)]="base">
           <ion-option value="" selected disabled>Choose Here</ion-option>
           <ion-option *ngFor="let code of codes" [value]="code">{{code}}</ion-option>
         </ion-select>
       </div>
-      <ion-item>
+      <ion-item class="input-bg">
         <ion-label floating>Enter Value</ion-label>
         <ion-input type="text" [(ngModel)]="input"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
-  <div class="d-flex flex-row justify-content-around">
-    <button ion-button color="dark" (click)="convertBase()"><i class="fas fa-angle-double-down"></i></button>
-    <button ion-button color="dark" (click)="convertTarget()"><i class="fas fa-angle-double-up"></i></button>
+  <div class="d-flex flex-row justify-content-around pt-3 pb-3">
+    <button class="arrow" ion-button color="dark" (click)="convertBase()"><i class="fas fa-angle-double-down"></i></button>
+    <button class="arrow" ion-button color="dark" (click)="convertTarget()"><i class="fas fa-angle-double-up"></i></button>
   </div>
-  <ion-card>
+  <ion-card class="card-bg">
       <ion-card-header>
-        Target:
+        <strong>Target :</strong>
       </ion-card-header>
       <ion-card-content class="d-flex flex-column justify-content-center">
         <div class="d-flex flex-row justify-content-around">
-          <ion-label>Currency</ion-label>
+          <ion-label>Currency :</ion-label>
           <ion-select [(ngModel)]="target">
             <ion-option value="" selected disabled>Choose Here</ion-option>
             <ion-option *ngFor="let code of codes" [value]="code">{{code}}</ion-option>
           </ion-select>
         </div>
-        <ion-item>
+        <ion-item class="input-bg">
           <ion-label floating>Enter Value</ion-label>
           <ion-input type="text" [(ngModel)]="output"></ion-input>
         </ion-item>
